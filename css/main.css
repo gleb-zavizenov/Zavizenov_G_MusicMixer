@@ -1,3 +1,80 @@
 .hidden{
   display:none;
 }
+
+main{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main{
+  width:100vw;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-blend-mode: color;
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  width:1200px;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  flex-direction: column;
+  overflow:hidden;
+}
+
+.controller{
+  width:400px;
+  margin-top: 70px;
+}
+
+.controller-icon{
+  width:100%;
+}
+
+.instruments{
+  width:100%;
+  margin-top:40px;
+  margin-bottom:20px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.instruments-set{
+  height:300px;
+  width:30%;
+  /* background-color: yellow; */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top-instrument{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100px;
+  width:60%;
+}
+
+.bottom-instrument{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:100px;
+  width:60%;
+  flex-direction: row;
+}
+
+.instrument-icon{
+  height:100%;
+}
