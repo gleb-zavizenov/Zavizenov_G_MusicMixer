@@ -1,8 +1,15 @@
 # Interactive Media Mixer with Fancy Drag and Drop
 
-Creating a drag and drop application with javaScript, HTML and CSS
+This is a Music Mixer Web Application with drag&drop dunctionality
 
+## Course
 
-making interactive music mixer
+IDP13 - MMED-1055-19S - Multimedia Authoring 2
 
+## Made by
 
+Zavizenov Gleb(designer)
+Kaur Prabhjot(developer)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
