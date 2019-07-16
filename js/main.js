@@ -4,6 +4,7 @@
   let dropZones = document.querySelectorAll(".dropzone");
 	let playbtn = document.querySelector("#play-btn");
 	let audioToPlay = [];
+  let isPlaying = false;
 
 	instruments.forEach(instrument => {
 		instrument.addEventListener('dragstart', function(e){
@@ -26,7 +27,7 @@
 			if (zone.children.length === 0){
 				e.target.appendChild(document.querySelector(`img[data-ref="${instrument}"]`));
 			} else {
-			console.log("Zone already has an element");
+			  console.log("Zone already has an element");
 			}
 			audioToPlay.push(document.querySelector(`audio[data-ref="${instrument}"]`));
 		});
@@ -34,9 +35,21 @@
 	});
 
   playbtn.addEventListener('click', function(e){
-    audioToPlay.forEach(audio => {
-      audio.play();
-    });
+    if(!isPlaying){
+      audioToPlay.forEach(audio => {
+        audio.play();
+      });
+      isPlaying = true;
+      // 1. Change image to 'Stop'
+    } else {
+      isPlaying = false;
+      audioToPlay.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+      // 2. Change image to 'play'
+    }
+
   })
 
 })();
