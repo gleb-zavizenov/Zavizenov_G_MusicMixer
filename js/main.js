@@ -1,7 +1,9 @@
 (() => {
 
   let instruments = document.querySelectorAll(".instrument-icon");
-  let dropZones = document.querySelectorAll(".drop-zone");
+  let dropZones = document.querySelectorAll(".dropzone");
+	let playbtn = document.querySelector("#play-btn");
+	let audioToPlay = [];
 
 	instruments.forEach(instrument => {
 		instrument.addEventListener('dragstart', function(e){
@@ -26,34 +28,15 @@
 			} else {
 			console.log("Zone already has an element");
 			}
-			playAudio(instrument);
+			audioToPlay.push(document.querySelector(`audio[data-ref="${instrument}"]`));
 		});
 
 	});
 
-
-
-	// instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetPuzzlePieces));
-
-	function playAudio(audio){
-		const audioTrack = document.querySelector(`audio[data-ref="${audio}"]`);
-		console.log(audioTrack);
-		audioTrack.play();
-	}
-
-
-	// function resetVariants() {
-	// 	// removes the instrument variants to display new ones
-	// 	iconDisplay.innerHTML = "";
-	// 	displayVariants(this.dataset.instrumentref);
-	// 	var images = document.getElementsByClassName("instrumentVariant");
-  //   			while(images.length > 4){
-  //       		images[4].parentNode.removeChild(images[4]);
-  //       	}
-	// }
-
-	// Event Handling below this
-
-	// instruments.forEach(instrument => instrument.addEventListener("click", resetVariants));
+  playbtn.addEventListener('click', function(e){
+    audioToPlay.forEach(audio => {
+      audio.play();
+    });
+  })
 
 })();
