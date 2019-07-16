@@ -7,8 +7,8 @@ main{
 }
 
 .main{
-  width:100vw;
-  height:100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +127,7 @@ main{
 
 /* Styles of controllers */
 
-.controller{
+.drop-zone{
   /* width:380px; */
   width:40%;
   margin-top: 40px;
