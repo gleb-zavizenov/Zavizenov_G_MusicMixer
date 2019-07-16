@@ -1,25 +1,32 @@
 (() => {
-	//this is a self invoking anonymous function
-	// also called a lamba, if you're into nerd speak
-	console.log("working");
 
   let instruments = document.querySelectorAll(".instrument-icon");
   let dropZones = document.querySelectorAll(".drop-zone");
 
+	instruments.forEach(instrument => {
+		instrument.addEventListener('dragstart', function(e){
+			e.dataTransfer.setData("text/plain", this.dataset.ref);
+		});
+	})
+
   dropZones.forEach(zone => {
 		zone.addEventListener("dragover", function(e) {
 			e.preventDefault();
-			console.log("Element is over me!")
 		});
 		zone.addEventListener("drop", function(e) {
-		// Prevents adding multiple instruments to same dropzone
-			if (!zone.innerHTML) {
-				let instrument = e.dataTransfer.getData("text/plain");
-				e.target.appendChild(document.querySelector(`#${instruments}`));
-				playAudio(instrument);
+			// Prevents adding multiple instruments to same dropzone
+			e.preventDefault();
+			console.log("Dropped something on me!");
+
+			let instrument = e.dataTransfer.getData("text/plain");
+			console.log(instrument);
+
+			if (zone.children.length === 0){
+				e.target.appendChild(document.querySelector(`img[data-ref="${instrument}"]`));
 			} else {
-				return;
+			console.log("Zone already has an element");
 			}
+			playAudio(instrument);
 		});
 
 	});
@@ -29,7 +36,7 @@
 	// instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetPuzzlePieces));
 
 	function playAudio(audio){
-		const audioTrack = document.querySelector(`[data-ref="${audio}"]`);
+		const audioTrack = document.querySelector(`audio[data-ref="${audio}"]`);
 		console.log(audioTrack);
 		audioTrack.play();
 	}
