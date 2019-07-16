@@ -1,5 +1,7 @@
 # Interactive Media Mixer with Fancy Drag and Drop
 
+![Logo](/images/favicon.png)
+
 This is a Music Mixer Web Application with drag&drop dunctionality
 
 ## Description
