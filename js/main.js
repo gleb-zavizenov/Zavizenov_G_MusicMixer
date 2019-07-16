@@ -1,57 +1,42 @@
 (() => {
-	//this is a self invoking anonymous function
-	// also called a lamba, if you're into nerd speak
-	console.log("working");
 
-	const instruments = ["grand piano", "mike","guitar"," cd","shana"];
-  let instrumentsSelector = document.querySelectorAll(".container img");
-  let dropZones = document.querySelectorAll(".drop-zone");
+  let instruments = document.querySelectorAll(".instrument-icon");
+  let dropZones = document.querySelectorAll(".dropzone");
+	let playbtn = document.querySelector("#play-btn");
+	let audioToPlay = [];
 
-  //Functions will start from here
+	instruments.forEach(instrument => {
+		instrument.addEventListener('dragstart', function(e){
+			e.dataTransfer.setData("text/plain", this.dataset.ref);
+		});
+	})
 
   dropZones.forEach(zone => {
 		zone.addEventListener("dragover", function(e) {
-		e.preventDefault();
+			e.preventDefault();
+		});
+		zone.addEventListener("drop", function(e) {
+			// Prevents adding multiple instruments to same dropzone
+			e.preventDefault();
+			console.log("Dropped something on me!");
+
+			let instrument = e.dataTransfer.getData("text/plain");
+			console.log(instrument);
+
+			if (zone.children.length === 0){
+				e.target.appendChild(document.querySelector(`img[data-ref="${instrument}"]`));
+			} else {
+			console.log("Zone already has an element");
+			}
+			audioToPlay.push(document.querySelector(`audio[data-ref="${instrument}"]`));
+		});
+
 	});
 
-	zone.addEventListener("drop", function(e) {
-		// Prevents adding multiple instruments to same dropzone
-		if (!zone.innerHTML) {
-		let instrument = e.dataTransfer.getData("text/plain");
-		e.target.appendChild(document.querySelector(`#${instruments}`));
-		playAudio(instrument);
-	} else {
-		return;
-	}
-	});
-
-});
-
-	
-
-	// instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetPuzzlePieces));
-
-	function playAudio(audio){
-		const audioTrack = document.querySelector(`[data-ref="${audio}"]`);
-		console.log(audioTrack);
-		audioTrack.play();
-	}
-
-
-	function resetVariants() {
-		// removes the instrument variants to display new ones
-		iconDisplay.innerHTML = "";
-		displayVariants(this.dataset.instrumentref);
-		var images = document.getElementsByClassName("instrumentVariant");
-    			while(images.length > 4){
-        		images[4].parentNode.removeChild(images[4]);
-        	}
-	}
-
-	// Event Handling below this
-
-	instrumentSelector.forEach(instrument => instrument.addEventListener("click", resetVariants));
-
-	displayVariants(0);
+  playbtn.addEventListener('click', function(e){
+    audioToPlay.forEach(audio => {
+      audio.play();
+    });
+  })
 
 })();
