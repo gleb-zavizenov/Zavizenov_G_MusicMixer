@@ -128,54 +128,58 @@ main{
 /* Styles of controllers */
 
 .controller{
-  width:40%;
+  width:400px;
   margin-top: 40px;
   background-image: url('../images/controller.svg');
   background-repeat: no-repeat;
-  background-size: auto;
-  height: 48%;
+  background-position: center center;
+  background-size:contain;
+  height: 400px;
   position: relative;
-  background-color: black;
+  -ms-transform-origin: 50% 57%; /* IE 9 */
+  -webkit-transform-origin: 50% 57%; /* Safari 3-8 */
+  transform-origin: 50% 57%;
 }
 
 .controller-active{
-  animation: roll 6s infinite;
+  -webkit-animation: rotation 2s infinite linear;
 }
 
-@keyframes roll {
+@keyframes rotation {
   0% {
-    transform: rotate(0);
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Safari 3-8 */
+  transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 }
 
 .dropzone{
   position: absolute;
-  width:38%;
-  height:38%;
+  width:150px;
+  height:150px;
   border-radius: 100px;
-  background-color: red;
 }
 
 .top{
   position: absolute;
-  top:5px;
+  top:0px;
   left:50%;
   transform:translateX(-50%);
 }
 
 .left{
   position: absolute;
-  bottom: 15px;
-  left:1px;
+  bottom: 0px;
+  left:5px;
 }
 
 .right{
   position: absolute;
-  bottom: 15px;
-  right:1px;
+  bottom: 0px;
+  right:5px;
 }
 
 #play-btn{
@@ -186,6 +190,10 @@ main{
   top:46%;
   left:50%;
   transform:translateX(-50%);
+  background-image: url(../images/play-btn.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:contain;
 }
 
 .instruments{
