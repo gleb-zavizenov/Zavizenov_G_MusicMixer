@@ -1,11 +1,14 @@
 (() => {
 
-  const instruments = document.querySelectorAll(".instrument-icon");
-  const dropZones = document.querySelectorAll(".dropzone");
-  const playbtn = document.querySelector("#play-btn");
-  const controller = document.querySelector('.controller');
-  let audioToPlay = [];
-  let isPlaying = false;
+    const instruments = document.querySelectorAll(".instrument-icon");
+    const dropZones = document.querySelectorAll(".dropzone");
+    const playbtn = document.querySelector("#play-btn");
+    const controller = document.querySelector('.controller');
+    const questionBtn = document.querySelector(".question-button");
+	const closeBtn = document.querySelector(".close-btn");
+	const explainerBox = document.querySelector(".explainer-box");
+    let audioToPlay = [];
+    let isPlaying = false;
 
 	instruments.forEach(instrument => {
 		instrument.addEventListener('dragstart', function(e){
@@ -13,7 +16,7 @@
 		});
 	})
 
-  dropZones.forEach(zone => {
+    dropZones.forEach(zone => {
 		zone.addEventListener("dragover", function(e) {
 			e.preventDefault();
 		});
@@ -35,9 +38,9 @@
 
 	});
 
-  playbtn.addEventListener('click', function(e){
-    if(!isPlaying){
-      audioToPlay.forEach(audio => {
+    playbtn.addEventListener('click', function(e){
+      if(!isPlaying){
+        audioToPlay.forEach(audio => {
         audio.play();
       });
 	  isPlaying = true;
@@ -52,8 +55,17 @@
 	  controller.classList.remove('controller-active');
 	  // 2. Change image to 'play'
 	  playbtn.style.backgroundImage = "url(images/play-btn.svg)";
-    }
+	}
+	});
 
-  })
+	questionBtn.addEventListener('click', function(){
+		explainerBox.classList.add("explainer-box-active");
+		questionBtn.style.display = 'none';
+	});
+
+	closeBtn.addEventListener('click', function(){
+		explainerBox.classList.remove("explainer-box-active");
+		questionBtn.style.display = 'block';
+	});
 
 })();
