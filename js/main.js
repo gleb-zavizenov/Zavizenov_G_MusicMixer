@@ -1,12 +1,14 @@
 (() => {
 
-    const instruments = document.querySelectorAll(".instrument-icon");
+	const instruments = document.querySelectorAll(".instrument-icon");
+	const instrumentSets = document.querySelectorAll(".instrument-set");
     const dropZones = document.querySelectorAll(".dropzone");
     const playbtn = document.querySelector("#play-btn");
     const controller = document.querySelector('.controller');
     const questionBtn = document.querySelector(".question-button");
 	const closeBtn = document.querySelector(".close-btn");
 	const explainerBox = document.querySelector(".explainer-box");
+	const resetBtn = document.querySelector('.reset-button');
     let audioToPlay = [];
     let isPlaying = false;
 
@@ -57,6 +59,19 @@
 	  playbtn.style.backgroundImage = "url(images/play-btn.svg)";
 	}
 	});
+
+	// resetBtn.addEventListener('click', function(){
+	// 	console.log("Reset was pressed");
+	// 	dropZones.forEach(zone => {
+	// 		if(zone.childNodes.length > 0){
+	// 			let elementToAdd = zone.firstElementChild;
+	// 			instruments.appendChild(elementToAdd);
+	// 			// zone.childNodes.remove(zone.firstElementChild);
+	// 		} else {
+	// 			console.log("Node is empty");
+	// 		}
+	// 	})
+	// });
 
 	questionBtn.addEventListener('click', function(){
 		explainerBox.classList.add("explainer-box-active");
