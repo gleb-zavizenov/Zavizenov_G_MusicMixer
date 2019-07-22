@@ -56,10 +56,24 @@ main{
   margin-top:40px;
   margin-right:40px;
   width:50px;
+  transition: 0.5s all;
+  cursor:pointer;
 }
 
 .close-btn-img{
   width:100%;
+  transition: 0.5s all;
+}
+
+.close-btn:hover .close-btn-img circle{
+  fill: #fff;
+  -webkit-box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.75);
+}
+
+.close-btn:hover .close-btn-img rect{
+  fill:#B2FEFA;
 }
 
 .explainer-text{
@@ -87,15 +101,52 @@ main{
 }
 
 /* Question button styles */
+.controll-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+  align-items: center;
+  margin-top:40px;
+}
+
+.reset-button{
+  width: 120px;
+  height:40px;
+  border-radius: 30px;
+  border: 1px solid white;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s all;
+  cursor:pointer;
+}
+
+.reset-button:hover{
+  background-color: #0ED2F7;
+}
+
+.reset-text{
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size:20px;
+  font-weight:light;
+  text-align:center;
+}
 
 .question-button{
-  margin-left:auto;
-  margin-top:40px;
   width:50px;
+  transition: 0.5s all;
+  cursor:pointer;
 }
 
 .question-img{
   width:100%;
+  transition: 0.5s all;
+}
+
+.question-button:hover .question-img{
+  fill: #0ED2F7;
 }
 
 /* Cross svgs */
@@ -275,7 +326,6 @@ main{
 .instruments-set{
   height:220px;
   width:30%;
-  /* background-color: yellow; */
   display:flex;
   justify-content: center;
   align-items: center;
