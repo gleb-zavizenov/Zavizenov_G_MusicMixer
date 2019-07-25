@@ -8,7 +8,8 @@
 	closeBtn = document.querySelector(".close-btn"),
 	explainerBox = document.querySelector(".explainer-box"),
 	resetBtn = document.querySelector('.reset-button'),
-	instrumentsContainer = document.querySelector(".instruments");
+	instrumentsContainer = document.querySelector(".instruments"),
+	main = document.querySelector(".main");
     let audioToPlay = [];
     let isPlaying = false;
 
@@ -36,6 +37,18 @@
 			  console.log("Zone already has an element");
 			}
 			audioToPlay.push(document.querySelector(`audio[data-ref="${instrument}"]`));
+
+			if ((dropZones[0].firstElementChild.dataset.back === 'mariachii') && (dropZones[1].firstElementChild.dataset.back === 'mariachii') && (dropZones[2].firstElementChild.dataset.back === 'mariachii')){
+				main.style.backgroundImage = 'url(images/mariachii.png)';
+			}
+
+			if ((dropZones[0].firstElementChild.dataset.back === 'nirvana') && (dropZones[1].firstElementChild.dataset.back === 'nirvana') && (dropZones[2].firstElementChild.dataset.back === 'nirvana')){
+				main.style.backgroundImage = 'url(images/nirvana.jpg)';
+			}
+
+			if ((dropZones[0].firstElementChild.dataset.back === 'frank-sinatra') && (dropZones[1].firstElementChild.dataset.back === 'frank-sinatra') && (dropZones[2].firstElementChild.dataset.back === 'frank-sinatra')){
+				main.style.backgroundImage = 'url(images/frank-sinatra.jpg)';
+			}
 		});
 
 	});
@@ -73,7 +86,8 @@
 				audioToPlay = [];
 		  		controller.classList.remove('controller-active');
 		  		// 2. Change image to 'play'
-		  		playbtn.style.backgroundImage = "url(images/play-btn.svg)";
+				playbtn.style.backgroundImage = "url(images/play-btn.svg)";
+				main.style.backgroundImage = 'url(images/background.jpg)';
 			} else {
 				console.log("Node is empty");
 			}
