@@ -2,11 +2,11 @@
 
 ![Logo](/images/favicon.png)
 
-This is a Music Mixer Web Application with drag&drop dunctionality
+This is a Music Mixer Web Application with drag&drop functionality
 
 ## Description
 
-Web app that allows user to mix diferent sounds
+Web app that allows user to mix diferent sounds and create new beat.
 
 ## Getting Started
 
