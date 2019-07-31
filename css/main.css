@@ -246,6 +246,7 @@ main{
 /* Styles of controllers */
 
 .controller{
+  background-color: black;
   width:360px;
   margin-top: 10px;
   background-image: url('../images/controller.svg');
@@ -274,29 +275,47 @@ main{
   }
 }
 
+
+@keyframes backrotation {
+  0% {
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Safari 3-8 */
+  transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-359deg);
+  }
+}
+
+.dropzone-active{
+  -webkit-animation: backrotation 3s infinite linear;
+}
 .dropzone{
+  background-color: red;
   position: absolute;
   width:135px;
   height:135px;
   border-radius: 100px;
 }
 
+
+
 .top{
   position: absolute;
-  top:2px;
+  top:29px;
   left:50%;
   transform:translateX(-50%);
 }
 
 .left{
   position: absolute;
-  bottom: 2px;
+  bottom: 29px;
   left:1px;
 }
 
 .right{
   position: absolute;
-  bottom: 2px;
+  bottom: 29px;
   right:1px;
 }
 

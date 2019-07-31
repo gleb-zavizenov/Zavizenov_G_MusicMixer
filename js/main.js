@@ -60,6 +60,7 @@
 			});
 		  	isPlaying = true;
 		  	controller.classList.add('controller-active');
+		  	dropZones.forEach(dropzone => dropzone.classList.add("dropzone-active"));
 		  	playbtn.style.backgroundImage = "url(images/stop-btn.svg)";
 		} else {
 			isPlaying = false;
@@ -68,6 +69,7 @@
 				audio.currentTime = 0;
 		  	});
 		  	controller.classList.remove('controller-active');
+		  	dropZones.forEach(dropzone => dropzone.classList.remove("dropzone-active"));
 		  	// 2. Change image to 'play'
 		  	playbtn.style.backgroundImage = "url(images/play-btn.svg)";
 		}
