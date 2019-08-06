@@ -246,7 +246,7 @@ main{
 /* Styles of controllers */
 
 .controller{
-  background-color: black;
+  /*background-color: black;*/
   width:360px;
   margin-top: 10px;
   background-image: url('../images/controller.svg');
@@ -291,7 +291,7 @@ main{
   -webkit-animation: backrotation 3s infinite linear;
 }
 .dropzone{
-  background-color: red;
+  /*background-color: red;*/
   position: absolute;
   width:135px;
   height:135px;
@@ -303,8 +303,8 @@ main{
 .top{
   position: absolute;
   top:29px;
-  left:50%;
-  transform:translateX(-50%);
+  left:32%;
+  /*transform:translateX(-50%);*/
 }
 
 .left{
