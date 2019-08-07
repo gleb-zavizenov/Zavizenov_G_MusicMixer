@@ -86,7 +86,8 @@
 					audio.currentTime = 0;
 				});
 				audioToPlay = [];
-		  		controller.classList.remove('controller-active');
+				controller.classList.remove('controller-active');
+				dropZones.forEach(dropzone => dropzone.classList.remove("dropzone-active"));
 		  		// 2. Change image to 'play'
 				playbtn.style.backgroundImage = "url(images/play-btn.svg)";
 				main.style.backgroundImage = 'url(images/background.jpg)';
