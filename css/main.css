@@ -30,7 +30,6 @@ main{
 }
 
 /* Explainer box styles */
-
 .explainer-box{
   position: absolute;
   z-index: 1000;
@@ -77,13 +76,9 @@ main{
 }
 
 .explainer-text{
-  margin-top:80px;
+  margin-top:100px;
   color:#ffffff;
   height:100%;
-}
-
-.explainer-text:first-child{
-  margin-bottom: 50px;
 }
 
 .explainer-title{
@@ -91,12 +86,13 @@ main{
   font-size:80px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 80px;
 }
 
 .explainer-subtitle{
   font-family: 'Montserrat', Arial, sans-serif;
   font-size:24px;
-  margin-top:40px;
+  margin-top:50px;
   text-align: center;
 }
 
@@ -108,6 +104,15 @@ main{
   width:100%;
   align-items: center;
   margin-top:40px;
+}
+
+.title{
+  color:#B2FEFA;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size:36px;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-align: center;
 }
 
 .reset-button{
@@ -153,28 +158,28 @@ main{
 
 .cross-1{
   position:absolute;
-  top:150px;
+  top:190px;
   left:0px;
   width:20px;
 }
 
 .cross-2{
   position:absolute;
-  top:300px;
+  top:400px;
   left:220px;
   width:20px;
 }
 
 .cross-3{
   position:absolute;
-  top:150px;
+  top:250px;
   right:-20px;
   width:20px;
 }
 
 .cross-4{
   position:absolute;
-  top:70%;
+  top:520px;
   right:350px;
   width:20px;
 }
@@ -183,21 +188,21 @@ main{
 
 .ellipse-1{
   position:absolute;
-  top:500px;
+  top:580px;
   left:-50px;
   width:30px;
 }
 
 .ellipse-2{
   position:absolute;
-  top:50px;
+  top:230px;
   left:350px;
   width:30px;
 }
 
 .ellipse-3{
   position:absolute;
-  top:120px;
+  top:180px;
   right:250px;
   width:30px;
 }
@@ -221,7 +226,7 @@ main{
 
 .line-2{
   position:absolute;
-  top:70%;
+  top:550px;;
   left:370px;
   width:3px;
   transform: rotate(90deg);
@@ -237,7 +242,7 @@ main{
 
 .line-4{
   position:absolute;
-  top:450px;
+  top:490px;
   right:-20px;
   width:3px;
   transform: rotate(90deg);
@@ -290,6 +295,7 @@ main{
 .dropzone-active{
   -webkit-animation: backrotation 3s infinite linear;
 }
+
 .dropzone{
   /*background-color: red;*/
   position: absolute;
@@ -297,8 +303,6 @@ main{
   height:135px;
   border-radius: 100px;
 }
-
-
 
 .top{
   position: absolute;
